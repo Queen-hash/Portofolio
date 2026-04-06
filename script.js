@@ -234,13 +234,18 @@ document.querySelectorAll('.contact-heading, .contact-sub').forEach(el => {
   revealObserver.observe(el);
 });
 document.querySelectorAll('.contact-link').forEach((el, i) => {
-  el.style.transitionDelay = `${i * 0.1}s`;
+  el.style.transitionDelay = `${i * 0.5}s`;
   el.classList.add('fade-el');
   revealObserver.observe(el);
 });
 
 document.querySelectorAll('footer p').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.1}s`;
+  el.classList.add('fade-el');
+  revealObserver.observe(el);
+});
+
+document.querySelectorAll('.contact-heading, .contact-sub, .contact-form-wrap').forEach(el => {
   el.classList.add('fade-el');
   revealObserver.observe(el);
 });
