@@ -136,7 +136,7 @@ const modalClose = document.getElementById('modal-close');
 
 let hoverTimeout;
 
-document.querySelectorAll('.skill-tag').forEach(tag => {
+document.querySelectorAll('.skill-icon-card').forEach(tag => {
   tag.addEventListener('mouseenter', () => {
     clearTimeout(hoverTimeout);
     const key  = tag.getAttribute('data-skill');
@@ -198,16 +198,25 @@ document.querySelectorAll('.section-label').forEach(el => {
   revealObserver.observe(el);
 });
 
-document.querySelectorAll('.about-text').forEach(el => {
-  el.classList.add('fade-left');
-  revealObserver.observe(el);
-});
-document.querySelectorAll('.skills-box').forEach(el => {
+document.querySelectorAll('.about-left').forEach(el => {
   el.classList.add('fade-right');
   revealObserver.observe(el);
 });
+document.querySelectorAll('.about-photo-wrap').forEach(el => {
+  el.classList.add('fade-left');
+  revealObserver.observe(el);
+});
+document.querySelectorAll('.stat-card').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.1}s`;
+  el.classList.add('fade-el');
+  revealObserver.observe(el);
+});
+document.querySelectorAll('.skills-section').forEach(el => {
+  el.classList.add('fade-el');
+  revealObserver.observe(el);
+});
 
-document.querySelectorAll('.skill-tag').forEach((el, i) => {
+document.querySelectorAll('.skill-icon-card').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.07}s`;
   el.classList.add('fade-el');
   revealObserver.observe(el);
