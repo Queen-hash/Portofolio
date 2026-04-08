@@ -281,6 +281,45 @@ window.addEventListener('scroll', () => {
   });
 });
 
+document.querySelectorAll('.stat-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect    = card.getBoundingClientRect();
+    const x       = e.clientX - rect.left;
+    const y       = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+    card.style.transform   = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    card.style.borderColor = 'rgba(205, 234, 18, 0.3)';
+    card.style.boxShadow   = `${-rotateY}px ${rotateX}px 20px rgba(200,245,66,0.08)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform   = 'perspective(500px) rotateX(0) rotateY(0) translateY(0)';
+    card.style.borderColor = '';
+    card.style.boxShadow   = '';
+  });
+});
+
+const certModal      = document.getElementById('cert-modal');
+const certModalClose = document.getElementById('cert-modal-close');
+const certStatCard   = document.getElementById('cert-stat-card');
+
+function openCertModal() {
+  certModal.classList.remove('hidden');
+  requestAnimationFrame(() => requestAnimationFrame(() => certModal.classList.add('visible')));
+}
+
+function closeCertModal() {
+  certModal.classList.remove('visible');
+  setTimeout(() => certModal.classList.add('hidden'), 300);
+}
+
+if (certStatCard) certStatCard.addEventListener('click', openCertModal);
+if (certModalClose) certModalClose.addEventListener('click', closeCertModal);
+if (certModal) certModal.addEventListener('click', (e) => { if (e.target === certModal) closeCertModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCertModal(); });
+
 document.querySelectorAll('.project-card:not(.coming-soon)').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect   = card.getBoundingClientRect();

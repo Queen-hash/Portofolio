@@ -467,12 +467,17 @@ body {
   border: 1px solid #1a1a1a;
   border-radius: 10px;
   padding: 1rem 1rem 0.85rem;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: border-color 0.15s, transform 0.12s ease-out, box-shadow 0.15s;
+  will-change: transform;
+  transform-style: preserve-3d;
 }
 
-.stat-card:hover {
-  border-color: rgba(205, 234, 18, 0.25);
-  transform: translateY(-2px);
+.stat-card-cert {
+  cursor: pointer;
+}
+
+.stat-card-cert:hover .stat-label {
+  color: #cdea12;
 }
 
 .stat-top {
@@ -967,6 +972,120 @@ footer p {
   white-space: pre;
   overflow-x: auto;
   background: #0d0d0d;
+}
+
+/* =====================
+   CERTIFICATES GLASS MODAL
+   ===================== */
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.cert-modal.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cert-modal.hidden {
+  display: none;
+}
+
+.cert-modal-box {
+  background: rgba(12, 12, 12, 0.6);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(205, 234, 18, 0.15);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(205, 234, 18, 0.08);
+}
+
+.cert-modal.visible .cert-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.cert-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(205, 234, 18, 0.1);
+  background: rgba(205, 234, 18, 0.03);
+}
+
+.cert-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: #cdea12;
+  letter-spacing: 0.05em;
+}
+
+#cert-modal-close {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  color: #555;
+  font-size: 18px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+
+#cert-modal-close:hover {
+  color: #e8e8e0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cert-modal-body {
+  padding: 2.5rem 1.5rem;
+}
+
+.cert-empty {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.cert-empty > i {
+  font-size: 3rem;
+  color: rgba(205, 234, 18, 0.15);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.cert-empty p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.cert-empty-sub {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: #333 !important;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
 }
 
 /* =====================

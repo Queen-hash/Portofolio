@@ -73,19 +73,18 @@
             <div class="stat-label">Total Projects</div>
             <div class="stat-sub">Innovative web solutions crafted</div>
           </div>
-          <div class="stat-card">
+          <div class="stat-card stat-card-cert" id="cert-stat-card">
             <div class="stat-top">
               <i class="fas fa-certificate stat-icon"></i>
               <i class="fas fa-arrow-up-right-from-square stat-arrow"></i>
             </div>
             <div class="stat-number">0</div>
             <div class="stat-label">Certificates</div>
-            <div class="stat-sub">Professional skills validated</div>
+            <div class="stat-sub">Click to view certificates</div>
           </div>
           <div class="stat-card">
             <div class="stat-top">
               <i class="fas fa-globe stat-icon"></i>
-              <i class="fas fa-arrow-up-right-from-square stat-arrow"></i>
             </div>
             <div class="stat-number">1+</div>
             <div class="stat-label">Years Learning</div>
@@ -122,6 +121,25 @@
         <div class="skill-icon-card" data-skill="vscode">
           <i class="devicon-vscode-plain colored"></i>
           <span>VSCode</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="cert-modal" class="cert-modal hidden">
+      <div class="cert-modal-box">
+        <div class="cert-modal-header">
+          <div class="cert-modal-title">
+            <i class="fas fa-certificate"></i>
+            <span>Certificates</span>
+          </div>
+          <button id="cert-modal-close">&times;</button>
+        </div>
+        <div class="cert-modal-body">
+          <div class="cert-empty">
+            <i class="fas fa-certificate"></i>
+            <p>No certificates yet.</p>
+            <p class="cert-empty-sub">Certificates will be displayed here once available.</p>
+          </div>
         </div>
       </div>
     </div>
