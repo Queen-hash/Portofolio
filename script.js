@@ -1,33 +1,27 @@
-const heroElements = [
-  { el: document.querySelector('.hero-topleft'),    delay: '0s'    },
-  { el: document.querySelector('.hero-topright'),   delay: '0.1s'  },
-  { el: document.querySelector('.hero-title-wrap'), delay: '0.2s'  },
-  { el: document.querySelector('.hero-photo'),      delay: '0.3s'  },
-  { el: document.querySelector('.hero-bottomleft'), delay: '0.35s' },
-  { el: document.querySelector('.hero-scroll'),     delay: '0.4s'  },
+const aboutEnterEls = [
+  { sel: '.navbar',           tx: 0,   ty: -18, delay: 0    },
+  { sel: '.about-photo-wrap', tx: -28, ty: 0,   delay: 0.15 },
+  { sel: '.about-left',       tx: 28,  ty: 0,   delay: 0.22 },
 ];
 
-heroElements.forEach(({ el, delay }) => {
+aboutEnterEls.forEach(({ sel, tx, ty, delay }) => {
+  const el = document.querySelector(sel);
   if (!el) return;
-  el.style.transition = `opacity 0.7s ${delay} ease, transform 0.7s ${delay} cubic-bezier(0.22,1,0.36,1)`;
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
+  el.style.opacity   = '0';
+  el.style.transform = `translate(${tx}px, ${ty}px)`;
+  el.style.transition = `opacity 0.8s ${delay}s ease, transform 0.8s ${delay}s cubic-bezier(0.22,1,0.36,1)`;
 });
 
-const heroObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    heroElements.forEach(({ el }) => {
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    aboutEnterEls.forEach(({ sel }) => {
+      const el = document.querySelector(sel);
       if (!el) return;
-      if (entry.isIntersecting) {
-        el.style.opacity = '1';
-        el.style.transform = 'translateY(0)';
-      }
+      el.style.opacity   = '1';
+      el.style.transform = 'none';
     });
-  });
-}, { threshold: 0.1 });
-
-const heroSection = document.querySelector('.hero');
-if (heroSection) heroObserver.observe(heroSection);
+  }, 60);
+});
 
 const skillExamples = {
   html: {
@@ -159,15 +153,16 @@ document.querySelectorAll('.skill-icon-card').forEach(tag => {
   });
 });
 
-// Kalau mouse masuk ke modal, jangan tutup
-modal.addEventListener('mouseenter', () => {
+const modalBox = modal.querySelector('.skill-modal-box');
+
+modalBox.addEventListener('mouseenter', () => {
   clearTimeout(hoverTimeout);
 });
 
-modal.addEventListener('mouseleave', () => {
+modalBox.addEventListener('mouseleave', () => {
   hoverTimeout = setTimeout(() => {
     closeModal();
-  }, 200);
+  }, 150);
 });
 
 function closeModal() {
@@ -283,18 +278,16 @@ window.addEventListener('scroll', () => {
 
 document.querySelectorAll('.stat-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
-    const rect    = card.getBoundingClientRect();
-    const x       = e.clientX - rect.left;
-    const y       = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10;
-    card.style.transform   = `perspective(500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    card.style.borderColor = 'rgba(205, 234, 18, 0.3)';
-    card.style.boxShadow   = `${-rotateY}px ${rotateX}px 20px rgba(200,245,66,0.08)`;
+    const rect = card.getBoundingClientRect();
+    const rx   = (((e.clientY - rect.top)  / rect.height) - 0.5) * -20;
+    const ry   = (((e.clientX - rect.left) / rect.width)  - 0.5) *  20;
+    card.style.transition  = 'border-color 0.15s, box-shadow 0.15s';
+    card.style.transform   = `perspective(500px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
+    card.style.borderColor = 'rgba(205, 234, 18, 0.35)';
+    card.style.boxShadow   = `${-ry * 0.8}px ${rx * 0.8}px 24px rgba(200,245,66,0.1)`;
   });
   card.addEventListener('mouseleave', () => {
+    card.style.transition  = 'border-color 0.3s, box-shadow 0.3s, transform 0.55s cubic-bezier(0.22,1,0.36,1)';
     card.style.transform   = 'perspective(500px) rotateX(0) rotateY(0) translateY(0)';
     card.style.borderColor = '';
     card.style.boxShadow   = '';
