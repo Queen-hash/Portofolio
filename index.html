@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Munawardy (DY) — Web Developer</title>
+
+  <meta name="description" content="Personal portfolio of Munawardy (DY), a front-end web developer from Indonesia. Building clean, functional, and modern web experiences." />
+  <meta property="og:title" content="Munawardy (DY) — Web Developer" />
+  <meta property="og:description" content="Building clean, functional, and modern web experiences. Based in Indonesia, open to opportunities." />
+  <meta property="og:image" content="foto.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Munawardy (DY) — Web Developer" />
+  <meta name="twitter:description" content="Building clean, functional, and modern web experiences." />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='10' fill='%230a0a0a'/><text y='.85em' font-size='55' font-family='monospace' font-weight='bold' fill='%23cdea12' x='8'>DY</text></svg>" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
@@ -18,6 +30,7 @@
     </div>
     <div class="hero-topright">
       <a href="#about" class="nav-pill">About</a>
+      <a href="#experience" class="nav-pill">Experience</a>
       <a href="#projects" class="nav-pill">Projects</a>
       <a href="#contact" class="nav-pill">Contact</a>
     </div>
@@ -26,10 +39,14 @@
       <p class="hero-label">Hey&#128075;, I'm a Web Developer</p>
       <h1 class="hero-name">Munawardy<br><span class="accent">(DY)</span></h1>
       <p class="hero-sub-text">Building clean, functional, and modern web experiences. Based in Indonesia, open to opportunities.</p>
-      <a href="#projects" class="hero-btn">View Projects</a>
+      <div class="hero-btn-group">
+        <a href="#projects" class="hero-btn">View Projects</a>
+        <a href="cv.pdf" download class="hero-btn-outline">Download CV</a>
+      </div>
       <div class="hero-socials">
         <a href="https://www.instagram.com/_nrrdyy" target="_blank" class="social" data-name="@_nrrdyy"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/munawardy-munawardy-1992b52ba/" target="_blank" class="social" data-name="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/" target="_blank" class="social" data-name="GitHub"><i class="fab fa-github"></i></a>
         <a href="#contact" class="social" data-name="Contact"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
@@ -48,12 +65,11 @@
     <p class="section-label">// 01 — about</p>
     <div class="about-grid">
       <div class="about-text">
-        <h2>Seorang developer yang sedang berkembang.</h2>
+        <h2>A developer constantly growing.</h2>
         <p>
-          Saya Munawardy, biasa dipanggil Dy. Seorang web developer yang
-          passionate dalam membangun antarmuka web yang bersih dan fungsional.
-          Saat ini terus belajar dan mengembangkan kemampuan di bidang
-          front-end development.
+          I'm Munawardy, usually called Dy. A web developer passionate about
+          building clean and functional web interfaces. I'm continuously learning
+          and improving my skills in front-end development, one project at a time.
         </p>
       </div>
       <div class="skills-box">
@@ -80,16 +96,59 @@
     </div>
   </section>
 
+  <section id="experience" class="section">
+    <p class="section-label">// 02 — experience</p>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <p class="timeline-year">2024 — Present</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Self-taught Front-end Developer</h3>
+          <p class="timeline-sub">Independent</p>
+          <p class="timeline-desc">Learning and building web projects using HTML, CSS, and JavaScript. Focused on front-end development, clean UI design, and creating responsive interfaces from scratch.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <p class="timeline-year">2023 — 2024</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Web Development Fundamentals</h3>
+          <p class="timeline-sub">Online Courses &amp; Self Study</p>
+          <p class="timeline-desc">Completed structured courses on HTML, CSS, JavaScript, and Git. Built multiple practice projects to reinforce core web development concepts.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <p class="timeline-year">2023</p>
+        </div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 class="timeline-title">Education</h3>
+          <p class="timeline-sub">Your School / University — Your Major</p>
+          <p class="timeline-desc">Update this entry with your education background.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <section id="projects" class="section">
-    <p class="section-label">// 02 — projects</p>
+    <p class="section-label">// 03 — projects</p>
     <div class="projects-grid">
 
       <div class="project-card">
         <p class="project-num">01</p>
         <p class="project-title">Portfolio Website</p>
         <p class="project-desc">
-          Personal portfolio website yang sedang kamu lihat ini.
-          Dibangun dari nol menggunakan HTML, CSS, dan JavaScript.
+          The personal portfolio website you're looking at right now.
+          Built from scratch using HTML, CSS, and JavaScript — no frameworks.
         </p>
         <div class="project-tags">
           <span class="project-tag">HTML</span>
@@ -101,7 +160,7 @@
       <div class="project-card coming-soon">
         <span class="cs-badge">Coming soon</span>
         <p class="project-title">Project 2</p>
-        <p class="project-desc">Segera hadir. Masih dalam pengerjaan.</p>
+        <p class="project-desc">Work in progress. Coming soon.</p>
         <div class="project-tags">
           <span class="project-tag">TBD</span>
         </div>
@@ -110,31 +169,33 @@
       <div class="project-card coming-soon">
         <span class="cs-badge">Coming soon</span>
         <p class="project-title">Project 3</p>
-        <p class="project-desc">Segera hadir. Masih dalam pengerjaan.</p>
+        <p class="project-desc">Work in progress. Coming soon.</p>
         <div class="project-tags">
           <span class="project-tag">TBD</span>
         </div>
       </div>
-        <div class="project-card coming-soon">
-          <span class="cs-badge">Coming soon</span>
-          <p class="project-title">Project 4</p>
-         <p class="project-desc">Segera hadir. Masih dalam pengerjaan.</p>
-          <div class="project-tags">
+
+      <div class="project-card coming-soon">
+        <span class="cs-badge">Coming soon</span>
+        <p class="project-title">Project 4</p>
+        <p class="project-desc">Work in progress. Coming soon.</p>
+        <div class="project-tags">
           <span class="project-tag">TBD</span>
         </div>
       </div>
+
     </div>
   </section>
 
   <section id="contact" class="section contact-section">
-    <p class="section-label">// 03 — contact</p>
+    <p class="section-label">// 04 — contact</p>
 
     <div class="contact-grid">
 
       <div class="contact-left">
-        <h2 class="contact-heading">Mari terhubung.</h2>
+        <h2 class="contact-heading">Let's connect.</h2>
         <p class="contact-sub">
-          Open untuk kolaborasi, proyek freelance, atau sekadar ngobrol soal web development.
+          Open to collaborations, freelance projects, or just a chat about web development.
         </p>
 
         <div class="contact-cards">
@@ -156,7 +217,16 @@
             <div class="contact-card-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
           </a>
 
-          <a href="mailto:your@email.com" class="contact-card">
+          <a href="https://github.com/" target="_blank" class="contact-card">
+            <div class="contact-card-icon"><i class="fab fa-github"></i></div>
+            <div class="contact-card-info">
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-value">github.com/your-username</span>
+            </div>
+            <div class="contact-card-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+          </a>
+
+          <a href="mailto:wincakardi.040105@email.com" class="contact-card">
             <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
             <div class="contact-card-info">
               <span class="contact-card-label">Email</span>
@@ -181,7 +251,7 @@
 
   <footer>
     <p><span class="dot"></span>Available for work</p>
-    <p>Munawardy (DY) &copy; 2025</p>
+    <p>Munawardy (DY) &copy; 2026</p>
   </footer>
 
   <script src="script.js"></script>

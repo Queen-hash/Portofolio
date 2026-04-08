@@ -233,6 +233,12 @@ document.querySelectorAll('.contact-heading, .contact-sub').forEach(el => {
   el.classList.add('fade-el');
   revealObserver.observe(el);
 });
+
+document.querySelectorAll('.timeline-item').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.12}s`;
+  el.classList.add('fade-el');
+  revealObserver.observe(el);
+});
 document.querySelectorAll('.contact-link').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.5}s`;
   el.classList.add('fade-el');
@@ -251,7 +257,7 @@ document.querySelectorAll('.contact-heading, .contact-sub, .contact-form-wrap').
 });
 
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinks = document.querySelectorAll('.nav-pill');
 
 window.addEventListener('scroll', () => {
   let current = '';
