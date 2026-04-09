@@ -1194,7 +1194,7 @@ footer p {
   left: calc(100% + 16px);
   transform: translateY(-30%) scale(0.92);
   width: 240px;
-  background: rgba(15, 15, 15, 0.72);
+  background: rgba(12, 12, 12, 0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(200, 245, 66, 0.25);
@@ -1208,7 +1208,7 @@ footer p {
 }
 
 .project-card-preview-wrap:hover .project-preview-glass {
-  opacity: 0.98;
+  opacity: 1;
   transform: translateY(-60%) scale(0.98);
 }
 
