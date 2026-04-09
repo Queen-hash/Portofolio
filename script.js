@@ -315,23 +315,20 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCertM
 
 document.querySelectorAll('.project-card:not(.coming-soon)').forEach(card => {
   card.addEventListener('mousemove', (e) => {
-    const rect   = card.getBoundingClientRect();
-    const x      = e.clientX - rect.left;
-    const y      = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -10;
-    const rotateY = ((x - centerX) / centerX) * 10;
-
-    card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+    const rect = card.getBoundingClientRect();
+    const rx   = (((e.clientY - rect.top)  / rect.height) - 0.5) * -18;
+    const ry   = (((e.clientX - rect.left) / rect.width)  - 0.5) *  18;
+    card.style.transition  = 'border-color 0.15s, box-shadow 0.15s';
+    card.style.transform   = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px)`;
     card.style.borderColor = '#c8f542';
-    card.style.boxShadow = `${-rotateY * 2}px ${rotateX * 2}px 30px rgba(200,245,66,0.12)`;
+    card.style.boxShadow   = `${-ry * 1.5}px ${rx * 1.5}px 30px rgba(200,245,66,0.12)`;
   });
 
   card.addEventListener('mouseleave', () => {
-    card.style.transform = 'perspective(600px) rotateX(0) rotateY(0) translateY(0)';
+    card.style.transition  = 'border-color 0.3s, box-shadow 0.3s, transform 0.55s cubic-bezier(0.22,1,0.36,1)';
+    card.style.transform   = 'perspective(700px) rotateX(0) rotateY(0) translateY(0)';
     card.style.borderColor = '';
-    card.style.boxShadow = '';
+    card.style.boxShadow   = '';
   });
 });
 
