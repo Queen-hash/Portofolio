@@ -16,9 +16,6 @@ body {
   overflow-x: hidden;
 }
 
-/* =====================
-   NAVBAR (fixed)
-   ===================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -40,9 +37,6 @@ body {
   gap: 1.5rem;
 }
 
-/* =====================
-   HERO / ABOUT COMBINED
-   ===================== */
 .section-hero {
   min-height: 100vh;
   padding-top: 7rem;
@@ -498,10 +492,10 @@ body {
 }
 
 .stat-number {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: #f0f0e8;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Mono', monospace;
   line-height: 1;
   margin-bottom: 0.35rem;
 }
@@ -509,7 +503,7 @@ body {
 .stat-label {
   font-family: 'Space Mono', monospace;
   font-size: 9px;
-  color: #555;
+  color: #cdea12;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 0.2rem;
@@ -517,7 +511,7 @@ body {
 
 .stat-sub {
   font-size: 10px;
-  color: #2e2e2e;
+  color: #535151;
   line-height: 1.4;
 }
 
@@ -573,9 +567,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* =====================
-   PROJECTS
-   ===================== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -659,10 +650,6 @@ body {
   margin-bottom: 1rem;
   display: inline-block;
 }
-
-/* =====================
-   CONTACT
-   ===================== */
 
 .contact-grid {
   display: grid;
@@ -821,9 +808,6 @@ body {
   transform: translateY(0);
 }
 
-/* =====================
-   FOOTER
-   ===================== */
 footer {
   padding: 2rem 2.5rem;
   border-top: 1px solid #141414;
@@ -848,9 +832,6 @@ footer p {
   animation: pulse 2s infinite;
 }
 
-/* =====================
-   ANIMATIONS
-   ===================== */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -867,9 +848,6 @@ footer p {
   50%       { opacity: 0.3; }
 }
 
-/* =====================
-   SCROLL REVEAL
-   ===================== */
 .fade-el {
   opacity: 0;
   transform: translateY(30px);
@@ -984,9 +962,6 @@ footer p {
   background: rgba(0, 0, 0, 0.35);
 }
 
-/* =====================
-   CERTIFICATES GLASS MODAL
-   ===================== */
 .cert-modal {
   position: fixed;
   inset: 0;
@@ -1098,9 +1073,6 @@ footer p {
   line-height: 1.6;
 }
 
-/* =====================
-   TIMELINE / EXPERIENCE
-   ===================== */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -1181,9 +1153,6 @@ footer p {
   line-height: 1.7;
 }
 
-/* =====================
-   PROJECT PREVIEW GLASS
-   ===================== */
 .project-card-preview-wrap {
   text-decoration: none;
   color: inherit;
@@ -1247,9 +1216,6 @@ footer p {
   gap: 6px;
 }
 
-/* =====================
-   RESPONSIVE
-   ===================== */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem 1.5rem;
