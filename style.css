@@ -580,13 +580,16 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
+  overflow: visible;
 }
 
 .project-card {
+  position: relative;
   border: 2px solid #1a1a1a;
   border-radius: 5px;
   padding: 1.75rem;
   background: #0f0f0f;
+  overflow: visible;
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.6s ease;
   will-change: transform;
   transform-style: preserve-3d;
@@ -1190,10 +1193,10 @@ footer p {
 
 .project-preview-glass {
   position: absolute;
-  top: 50%;
-  left: calc(100% + 16px);
-  transform: translateY(-30%) scale(0.92);
-  width: 260px;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px) scale(0.94);
+  width: 280px;
   background: #0c0c0c;
   border: 1px solid rgba(200, 245, 66, 0.25);
   border-radius: 14px;
@@ -1201,13 +1204,13 @@ footer p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.28s cubic-bezier(0.22,1,0.36,1);
-  z-index: 100;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6), inset 0 0 0 0.5px rgba(255,255,255,0.06);
+  z-index: 200;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.7), inset 0 0 0 0.5px rgba(255,255,255,0.06);
 }
 
 .project-card-preview-wrap:hover .project-preview-glass {
   opacity: 1;
-  transform: translateY(-60%) scale(0.98);
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 .preview-glass-img {
