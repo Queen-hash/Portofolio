@@ -41,14 +41,13 @@ const skillExamples = {
   },
   css: {
     title: 'CSS — Styling Elemen',
-    code: `/* Ubah tampilan heading */
+    code: `
 h1 {
   color: #c8f542;
   font-size: 3rem;
   font-weight: 800;
 }
 
-/* Tombol dengan hover effect */
 .btn {
   background: #c8f542;
   padding: 0.75rem 1.5rem;
